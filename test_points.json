@@ -1,0 +1,350 @@
+[
+  {
+    "test_id": "test_776670ba",
+    "test_name": "YANG 1.1 Syntax Validation",
+    "test_type": "syntax_validation",
+    "yang_path": "/",
+    "test_description": "Validate YANG file syntax according to RFC 7950",
+    "test_steps": [
+      "Parse YANG file: ietf-interfaces.yang",
+      "Check for syntax errors",
+      "Verify YANG version"
+    ],
+    "expected_result": "YANG file should be syntactically valid",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 7950",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_24eb6296",
+    "test_name": "Module Import Validation",
+    "test_type": "module_import",
+    "yang_path": "/",
+    "test_description": "Validate all imported modules are available",
+    "test_steps": [
+      "Parse YANG file: ietf-interfaces.yang",
+      "Extract imported modules",
+      "Verify all imports can be resolved"
+    ],
+    "expected_result": "All imported modules should be available",
+    "severity": "high",
+    "auto_executable": true,
+    "rfc_reference": "RFC 7950 Section 7",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_c3098761",
+    "test_name": "NETCONF get-config Operation",
+    "test_type": "get_config",
+    "yang_path": "/",
+    "test_description": "Test NETCONF get-config operation",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Send get-config request",
+      "Verify configuration is returned"
+    ],
+    "expected_result": "Configuration should be returned successfully",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.1",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_2459ad2b",
+    "test_name": "NETCONF get Operation",
+    "test_type": "get_config",
+    "yang_path": "/",
+    "test_description": "Test NETCONF get operation (including state data)",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Send get request",
+      "Verify configuration and state data are returned"
+    ],
+    "expected_result": "Configuration and state data should be returned",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.7",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_3dd94a31",
+    "test_name": "NETCONF edit-config (merge)",
+    "test_type": "edit_config",
+    "yang_path": "/",
+    "test_description": "Test NETCONF edit-config with merge operation",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Edit config using merge operation",
+      "Commit changes",
+      "Verify changes were applied"
+    ],
+    "expected_result": "Edit-config with merge should work correctly",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.2",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_eba12168",
+    "test_name": "NETCONF edit-config (replace)",
+    "test_type": "edit_config",
+    "yang_path": "/",
+    "test_description": "Test NETCONF edit-config with replace operation",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Edit config using replace operation",
+      "Commit changes",
+      "Verify changes were applied"
+    ],
+    "expected_result": "Edit-config with replace should work correctly",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.2",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_b71ea88d",
+    "test_name": "NETCONF edit-config (create)",
+    "test_type": "edit_config",
+    "yang_path": "/",
+    "test_description": "Test NETCONF edit-config with create operation",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Edit config using create operation",
+      "Commit changes",
+      "Verify changes were applied"
+    ],
+    "expected_result": "Edit-config with create should work correctly",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.2",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_1eed7de6",
+    "test_name": "NETCONF edit-config (delete)",
+    "test_type": "edit_config",
+    "yang_path": "/",
+    "test_description": "Test NETCONF edit-config with delete operation",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Edit config using delete operation",
+      "Commit changes",
+      "Verify changes were applied"
+    ],
+    "expected_result": "Edit-config with delete should work correctly",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.2",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_c1ddf9ad",
+    "test_name": "NETCONF lock/unlock Operation",
+    "test_type": "lock_unlock",
+    "yang_path": "/",
+    "test_description": "Test NETCONF lock and unlock operations",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Lock candidate datastore",
+      "Verify lock is acquired",
+      "Unlock candidate datastore",
+      "Verify lock is released"
+    ],
+    "expected_result": "Lock/unlock should work correctly",
+    "severity": "high",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.5",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_2cfb6ab3",
+    "test_name": "NETCONF commit Operation",
+    "test_type": "commit_discard",
+    "yang_path": "/",
+    "test_description": "Test NETCONF commit operation",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Edit candidate configuration",
+      "Commit changes",
+      "Verify changes are in running config"
+    ],
+    "expected_result": "Commit should successfully apply changes",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 7.4",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_c6e83c05",
+    "test_name": "NETCONF validate Operation",
+    "test_type": "validate",
+    "yang_path": "/",
+    "test_description": "Test NETCONF validate operation",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Edit candidate with invalid config",
+      "Try to validate",
+      "Verify validation fails appropriately"
+    ],
+    "expected_result": "Invalid configuration should be rejected",
+    "severity": "high",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 8.6",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_807d8894",
+    "test_name": "RESTCONF GET Operation",
+    "test_type": "restconf_get",
+    "yang_path": "/",
+    "test_description": "Test RESTCONF GET operation",
+    "test_steps": [
+      "Connect to device via RESTCONF",
+      "Send GET request",
+      "Verify data is returned"
+    ],
+    "expected_result": "Data should be returned successfully",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 8040 Section 3.3",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_ccdd26ea",
+    "test_name": "RESTCONF POST Operation",
+    "test_type": "restconf_post",
+    "yang_path": "/",
+    "test_description": "Test RESTCONF POST to create data",
+    "test_steps": [
+      "Connect to device via RESTCONF",
+      "Send POST request with new data",
+      "Verify resource is created"
+    ],
+    "expected_result": "Resource should be created successfully",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 8040 Section 3.4",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_33e915e5",
+    "test_name": "RESTCONF PUT Operation",
+    "test_type": "restconf_put",
+    "yang_path": "/",
+    "test_description": "Test RESTCONF PUT to replace data",
+    "test_steps": [
+      "Connect to device via RESTCONF",
+      "Send PUT request with replacement data",
+      "Verify resource is replaced"
+    ],
+    "expected_result": "Resource should be replaced successfully",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 8040 Section 3.5",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_3df2eaad",
+    "test_name": "RESTCONF PATCH Operation",
+    "test_type": "restconf_patch",
+    "yang_path": "/",
+    "test_description": "Test RESTCONF PATCH to modify data",
+    "test_steps": [
+      "Connect to device via RESTCONF",
+      "Send PATCH request with modifications",
+      "Verify resource is modified"
+    ],
+    "expected_result": "Resource should be modified successfully",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 8040 Section 4.5",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_3b35d6d3",
+    "test_name": "RESTCONF DELETE Operation",
+    "test_type": "restconf_delete",
+    "yang_path": "/",
+    "test_description": "Test RESTCONF DELETE operation",
+    "test_steps": [
+      "Connect to device via RESTCONF",
+      "Send DELETE request",
+      "Verify resource is deleted"
+    ],
+    "expected_result": "Resource should be deleted successfully",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 8040 Section 3.6",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_b9b06360",
+    "test_name": "NETCONF Base Capability",
+    "test_type": "capability_negotiation",
+    "yang_path": "/",
+    "test_description": "Test NETCONF base:1 capability",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Query server capabilities",
+      "Verify :base:1.0 or :base:1.1 is advertised"
+    ],
+    "expected_result": "Base capability should be advertised",
+    "severity": "critical",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 8.1",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_16426180",
+    "test_name": "NETCONF Candidate Capability",
+    "test_type": "capability_negotiation",
+    "yang_path": "/",
+    "test_description": "Test NETCONF candidate capability",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Query server capabilities",
+      "Check if :candidate is advertised"
+    ],
+    "expected_result": "Candidate capability should be advertised if supported",
+    "severity": "high",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 8.3",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_7fca39ec",
+    "test_name": "NETCONF Writable-Running Capability",
+    "test_type": "capability_negotiation",
+    "yang_path": "/",
+    "test_description": "Test NETCONF writable-running capability",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Query server capabilities",
+      "Check if :writable-running is advertised"
+    ],
+    "expected_result": "Writable-running capability should be advertised if supported",
+    "severity": "high",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 8.2",
+    "metadata": {}
+  },
+  {
+    "test_id": "test_2f31122d",
+    "test_name": "NETCONF Validate Capability",
+    "test_type": "capability_negotiation",
+    "yang_path": "/",
+    "test_description": "Test NETCONF validate capability",
+    "test_steps": [
+      "Connect to device via NETCONF",
+      "Query server capabilities",
+      "Check if :validate is advertised"
+    ],
+    "expected_result": "Validate capability should be advertised if supported",
+    "severity": "medium",
+    "auto_executable": true,
+    "rfc_reference": "RFC 6241 Section 8.6",
+    "metadata": {}
+  }
+]
